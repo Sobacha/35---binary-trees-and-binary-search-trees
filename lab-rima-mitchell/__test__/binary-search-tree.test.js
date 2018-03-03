@@ -111,8 +111,6 @@ describe('BST', () => {
         expect(bst.root.right.right.value).toEqual(21);
         expect(bst.root.right.left.value).toEqual(9);
       });
-      test('', () => {
-      });
     });
     
   });

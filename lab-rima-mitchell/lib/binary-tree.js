@@ -21,7 +21,6 @@ class BinaryTree{
 
     this._inOrderTraversal(root.left, res);
     res.push(root.value);
-    console.log(`In - Visiting ${root.value}`);
     this._inOrderTraversal(root.right, res);
   }
 
@@ -39,7 +38,6 @@ class BinaryTree{
       return null;
       
     res.push(root.value);
-    console.log(`Pre - Visiting ${root.value}`);
     this._preOrderTraversal(root.left, res);
     this._preOrderTraversal(root.right, res);
   }
@@ -60,7 +58,6 @@ class BinaryTree{
     this._postOrderTraversal(root.left, res);
     this._postOrderTraversal(root.right, res);
     res.push(root.value);
-    console.log(`Post - Visiting ${root.value}`);
   }
 }
 
