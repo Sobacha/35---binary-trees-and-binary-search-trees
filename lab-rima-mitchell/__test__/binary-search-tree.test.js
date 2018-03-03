@@ -85,6 +85,51 @@ describe('BST', () => {
   });
 
   describe('BST findMinInRight', () => {
+
+    describe('valid input', () => {
+      test('should return a correct minimum node in right sub tree of input node (no children in sub tree)', () => {
+        const bst = new BST();
+        const root = new TreeNode(5);
+        const two = new TreeNode(2);
+        const three = new TreeNode(12);
+        const four = new TreeNode(-4);
+        const five = new TreeNode(9);
+        const six = new TreeNode(21);
+        const seven = new TreeNode(3);
+        bst.insert(root);
+        bst.insert(two);
+        bst.insert(three);
+        bst.insert(four);
+        bst.insert(five);
+        bst.insert(six);
+        bst.insert(seven);
+
+        const res = bst.findMinInRight(three);
+        expect(res.parentNode.value).toEqual(12);
+        expect(res.minNode.value).toEqual(21);
+      });
+      test('should return a correct minimum ndoe in right sub tree of input node (more than one child in either left or right)', () => {
+        const bst = new BST();
+        const root = new TreeNode(5);
+        const two = new TreeNode(2);
+        const three = new TreeNode(12);
+        const four = new TreeNode(-4);
+        const five = new TreeNode(9);
+        const six = new TreeNode(21);
+        const seven = new TreeNode(3);
+        bst.insert(root);
+        bst.insert(two);
+        bst.insert(three);
+        bst.insert(four);
+        bst.insert(five);
+        bst.insert(six);
+        bst.insert(seven);
+
+        const res = bst.findMinInRight(root);
+        expect(res.parentNode.value).toEqual(12);
+        expect(res.minNode.value).toEqual(9);
+      });
+    });
     
   });
 

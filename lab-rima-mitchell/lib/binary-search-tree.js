@@ -63,6 +63,7 @@ class BST{
   findMinInRight(startNode){
     let parent = startNode;
     let min = startNode.right;
+
     while(min.left){
       parent = min;
       min = min.left;
