@@ -14,7 +14,7 @@ describe('TreeNode', () => {
         expect(tn.value).toEqual(2);
         expect(tn.left).toEqual(null);
         expect(tn.right).toEqual(null);
-      });      
+      }); 
       test('should create an instance of TreeNode with user input value', () => {
         const tn = new TreeNode(5);
 
@@ -27,7 +27,7 @@ describe('TreeNode', () => {
 
         expect(tn.left).toEqual(left);
         expect(tn.right).toEqual(null);
-      });      
+      });
 
       test('should create an instance of TreeNode with user input for right', () => {
         const left = new TreeNode(1);
@@ -40,7 +40,7 @@ describe('TreeNode', () => {
     });
 
     describe('invalid input', () => {
-      test('should throw an error if value is not passed', () => {
+      test('should throw an error with no input', () => {
         expect(() => new TreeNode()).toThrow('Value required');
       });
     });
