@@ -12,6 +12,9 @@ class BST{
   }
   
   insert(node){
+    if(!(node instanceof TreeNode)){
+      throw new Error('Input needs to be an instanceof TreeNode');
+    }
     if(this.root === null){
       this.root = node;
     }else{
