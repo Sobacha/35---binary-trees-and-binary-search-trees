@@ -1,12 +1,5 @@
 'use strict';
 
-class TreeNode{
-  constructor(value,left=null,right=null){
-    this.value = value;
-    this.left = left;
-    this.right = right;
-  }
-}
 
 class BinaryTree{
   constructor(root=null){
@@ -14,81 +7,62 @@ class BinaryTree{
   }
 
   inOrderTraversal(){
-   if(!this.root)
-     return null;
-   this._inOrderTraversal(this.root);
+    if(!this.root)
+      return null;
+    
+    let resIn = [];
+    this._inOrderTraversal(this.root, resIn);
+    return resIn;
   }
 
-  _inOrderTraversal(root){
+  _inOrderTraversal(root, res){
     if(root === null)
       return null;
 
-    this._inOrderTraversal(root.left);
+    this._inOrderTraversal(root.left, res);
+    res.push(root.value);
     console.log(`In - Visiting ${root.value}`);
-    this._inOrderTraversal(root.right);
+    this._inOrderTraversal(root.right, res);
   }
 
   preOrderTraversal() {
     if(!this.root)
       return null;
-    this._preOrderTraversal(this.root);
+
+    let resPre = [];
+    this._preOrderTraversal(this.root, resPre);
+    return resPre;
   }
 
-  _preOrderTraversal(root) {
+  _preOrderTraversal(root, res) {
     if(root === null)
       return null;
       
+    res.push(root.value);
     console.log(`Pre - Visiting ${root.value}`);
-    this._preOrderTraversal(root.left);
-    this._preOrderTraversal(root.right);
+    this._preOrderTraversal(root.left, res);
+    this._preOrderTraversal(root.right, res);
   }
 
   postOrderTraversal() {
     if(!this.root)
       return null;
-    this._postOrderTraversal(this.root);
+
+    let resPost = [];
+    this._postOrderTraversal(this.root, resPost);
+    return resPost;
   }
 
-  _postOrderTraversal(root) {
+  _postOrderTraversal(root, res) {
     if(root === null)
       return null;
 
-    this._postOrderTraversal(root.left);
-    this._postOrderTraversal(root.right);
+    this._postOrderTraversal(root.left, res);
+    this._postOrderTraversal(root.right, res);
+    res.push(root.value);
     console.log(`Post - Visiting ${root.value}`);
   }
 }
 
-let one = new TreeNode(1);
-let two = new TreeNode(2);
-let three = new TreeNode(3);
-let four = new TreeNode(4);
-let five = new TreeNode(5);
-let six = new TreeNode(6);
-let seven = new TreeNode(7);
-let eight = new TreeNode(8);
-let nine = new TreeNode(9);
 
-let binaryTree = new BinaryTree();
-binaryTree.root = one;
-
-one.left = two;
-one.right = three;
-
-two.left = six;
-
-three.left = four;
-three.right = five;
-
-six.right = seven;
-
-seven.left = eight;
-seven.right = nine;
-
-binaryTree.inOrderTraversal();
-binaryTree.preOrderTraversal();
-binaryTree.postOrderTraversal();
-
-// CHECKIN FOR MAX 1 DIFFERENCE BETWEEN BRANCH HEIGHTS
-// REMOVE FROM BST(), HANDLE REMOVING ROOT
-
+module.exports = BinaryTree;
