@@ -60,7 +60,7 @@ class BST{
     }
   }
   
-  findMinInRight(startNode){
+  _findMinInRight(startNode){
     let parent = startNode;
     let min = startNode.right;
 
@@ -82,22 +82,29 @@ class BST{
       return null;
     }else{
       if(nodeToRemove.left && nodeToRemove.right){
-        let res = this.findMinInRight(nodeToRemove);
+        let res = this._findMinInRight(nodeToRemove);
         let parent = res.parentNode;
         let min = res.minNode;
-        nodeToRemove.value = min.value;
+
+        if(this.isLeft){
+          this.parent.left = min;
+        }else{
+          this.parent.right = min;
+        }
+        min.left = nodeToRemove.left;
+        min.right = nodeToRemove.right;
         parent.left = null;
       }else if(nodeToRemove.left && !nodeToRemove.right){
         if(this.isLeft){
-          this.parent.left = nodetoremove.left;
+          this.parent.left = nodeToRemove.left;
         }else{
-          this.parent.right = nodetoremove.left;
+          this.parent.right = nodeToRemove.left;
         }
       }else if(!nodeToRemove.left && nodeToRemove.right){
         if(this.isLeft){
-          this.parent.left = nodetoremove.right;
+          this.parent.left = nodeToRemove.right;
         }else{
-          this.parent.right = nodetoremove.right;
+          this.parent.right = nodeToRemove.right;
         }
       }else if(!nodeToRemove.left && !nodeToRemove.right){
         this.parent.left = null;
