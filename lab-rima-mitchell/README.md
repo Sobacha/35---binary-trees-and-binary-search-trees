@@ -132,7 +132,7 @@ This module requires in the `TreeNode` module, and exports a single class `BST`.
 **<details>**
   <summary>Tools and Libraries</summary>
 
-  * [ESLint](https://www.npmjs.com/package/eslint) ~ npmjs.com/package/eslint(https://www.npmjs.com/package/html-webpack-plugin) ~ npmjs.com/package/html-webpack-plugin
+  * [ESLint](https://www.npmjs.com/package/eslint) ~ npmjs.com/package/eslint
   * [Jest](https://facebook.github.io/jest/) ~ facebook.github.io/jest/
 </details>
 
