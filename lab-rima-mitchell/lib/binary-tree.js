@@ -6,6 +6,7 @@ class BinaryTree{
     this.root = root;
   }
 
+  // O(N) where N is the number of nodes in BS
   inOrderTraversal(){
     if(!this.root)
       return null;
@@ -24,6 +25,7 @@ class BinaryTree{
     this._inOrderTraversal(root.right, res);
   }
 
+  // O(N) where N is the number of nodes in BS
   preOrderTraversal() {
     if(!this.root)
       return null;
@@ -42,6 +44,7 @@ class BinaryTree{
     this._preOrderTraversal(root.right, res);
   }
 
+  // O(N) where N is the number of nodes in BS
   postOrderTraversal() {
     if(!this.root)
       return null;
