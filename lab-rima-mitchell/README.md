@@ -1,4 +1,4 @@
-# Lab 29 ~ Component Composition
+# Lab 35 ~ Binary Tree/Binary Search Tree
 
 **Authors**:
 * Rima
