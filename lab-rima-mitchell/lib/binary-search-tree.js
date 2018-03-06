@@ -7,7 +7,8 @@ class BST{
   constructor(root = null){
     this.root = root;
   }
-  
+
+  // O(logN) where N is the number of nodes in BST
   insert(node){
     if(!(node instanceof TreeNode)){
       throw new Error('Input needs to be an instanceof TreeNode');
@@ -35,6 +36,7 @@ class BST{
     }
   }
   
+  // O(logN) where N is the number of nodes in BST
   find(value){
     return this._find(this.root, value);
   }
@@ -51,6 +53,7 @@ class BST{
     }
   }
   
+  // O(N) where N is the number of nodes in BST
   remove(value){
     let removedBST = new BST();
     this.preOrderRemoveNode(value, removedBST);
